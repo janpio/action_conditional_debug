@@ -1,0 +1,18 @@
+name: debug
+on: push
+  
+jobs:
+  platforms:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        platform:
+          - lambda
+          - codesandbox
+
+    steps:
+      - if: ${{ matrix.platform == 'codesandbox' }}
+        run: echo "Execution contidional!"
+
+      - run: echo "Execute always!"
