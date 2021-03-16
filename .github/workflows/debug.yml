@@ -12,7 +12,7 @@ jobs:
           - codesandbox
 
     steps:
-      - if: ${{ matrix.platform == 'codesandbox' }}
-        run: echo "Execution contidional!"
+      - if: matrix.platform == 'codesandbox'
+        run: echo "Execution conditional!"
 
       - run: echo "Execute always!"
