@@ -15,4 +15,10 @@ jobs:
       - if: matrix.platform == 'codesandbox'
         run: echo "Execution conditional!"
 
+      - name: Install Puppeteer
+        if: ${{ matrix.platform == 'codesandbox' }} 
+        uses: ianwalter/puppeteer-container@v4.0.0 
+        with: 
+          args: yarn --ignore-engines 
+     
       - run: echo "Execute always!"
